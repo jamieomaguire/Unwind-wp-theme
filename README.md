@@ -3,5 +3,5 @@ I found a wordpress them on dribbble I liked by Ricardo Salazar: https://dribbbl
 I thought it would be fun to build it!
 
 
-[Check it out on my codepen:](http://codepen.io/JamieMaguire/full/KNErPq/)
+[Check it out on my codepen](http://codepen.io/JamieMaguire/full/KNErPq/)
 
