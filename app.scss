@@ -1,0 +1,528 @@
+$border-grey: #D3D4D1;
+$font-grey: #8A979C;
+$font-dark-grey: darken($font-grey, 10%);
+$font-green: #27D194;
+$font-navy: #26414F;
+$bg-white: #FFFFFF;
+$parent-height: 100%;
+$parent-width: 100%;
+$ease-out-300: 300ms ease-out;
+$ease-out-100: 100ms ease-out;
+$roboto-slab: 'Roboto Slab', serif;
+$lato: 'Lato', sans-serif;
+$page-width: 70%;
+$spacing-sml: .5px;
+
+
+
+* {
+  box-sizing: border-box;
+}
+body{
+  background-color: $bg-white;
+  margin: 0;
+}
+.page-wrapper{
+  min-height: 2500px;
+  width: 100%;
+  transition: $ease-out-300;
+}
+
+// ***** Side nav styles ***** //
+.side-nav__container{
+  position: fixed;
+  background-color: $bg-white;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  height: 100%;
+  width: 0px;
+  box-shadow: -10px 0 5px -10px inset;
+  transition: $ease-out-300;
+}
+
+.close-nav__icon{
+  float: right;
+  margin-top: .5em;
+  margin-right: 1em;
+  font-size: 2em;
+  cursor: pointer;
+  transition: $ease-out-300;
+}
+.side-nav__link{
+  display: block;
+  margin-bottom: 2.5em;
+  margin-left: 4em;
+  transition: $ease-out-300;
+  border-bottom: 1px $border-grey;
+  &:first-of-type{
+    margin-top: 100px;
+  }
+  &:last-of-type{
+    margin-bottom: 0px;
+  }
+}
+
+// ***** Toggled nav styles ***** //
+.toggle-nav__container{
+  min-height: 40px;
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid $font-navy;
+  border-radius: 100%;
+  justify-content: center;
+  transition: $ease-out-300;
+  &:hover {
+    background-color: $font-navy;
+    cursor: pointer;
+    .open-nav__icon{
+      color: $bg-white;
+    }
+  }
+}
+@media(min-width: 710px){
+  .toggle-nav__container{
+    display: none;
+  }
+}
+.toggle-nav__inner{
+  display: block;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.open-nav__icon, .close-nav__icon{
+  color: $font-navy;
+  transition: $ease-out-300;
+}
+.open-nav__icon{
+  font-size: 1.5em;
+}
+
+
+// ***** Nav styles ***** //
+.nav__main{
+  border-bottom: 1px solid $border-grey;
+  height: 55px;
+}
+.nav__inner-container{
+  height: $parent-height;
+  width: $page-width;
+  // background-color: lightgreen;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media(max-width: 959px){
+    .nav__inner-container{
+      width: $parent-width;
+      padding: 0 1em;
+    }
+  }
+.nav__link-list-container{
+  height: $parent-height;
+  width: 50%;
+}
+@media(max-width: 830px){
+  .nav__link-list-container{
+    width: 60%;
+  }
+}
+@media(max-width: 710px){
+  .nav__link-list-container{
+    width: 70%;
+  }
+}
+@media(max-width: 710px){
+   .nav__link-list-container{
+    display: none;
+  }
+}
+.nav__link-list-ul{
+  height: $parent-height;
+  width: $parent-width;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // background-color: pink;
+}
+.nav__link-listItem{
+  height: $parent-height;
+  padding: 1em 0;
+  list-style-type: none;
+}
+.nav__listItem-link{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $font-dark-grey;
+  font-size: .8em;
+  font-weight: bold;
+  font-family: $lato;
+  letter-spacing: $spacing-sml;
+  transition: 300ms ease-out;
+  &:hover{
+    color: $font-dark-grey;
+    text-decoration: underline;
+  }
+}
+
+// ***** Icon list styles ***** //
+.nav__icon-container{
+  // background-color: lightblue;
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+}
+@media(max-width: 710px){
+  .nav__icon-container{
+    width: 60%;
+  }
+}
+@media(max-width: 370px){
+  .nav__icon-container{
+    width: 70%;
+  }
+}
+.nav__icon{
+  font-size: 1.2em;
+  color: $font-dark-grey;
+  transition: $ease-out-300;
+  &:hover{
+    color: darken($font-dark-grey, 20%);
+  }
+}
+@media(max-width: 710px){
+  .nav__icon{
+    font-size: 1.8em;
+  }
+}
+.pipeline{
+  position: relative;
+  &::after{
+    content: '';
+    margin-left: .8em;
+    border-right: 1px solid $font-grey;
+  }
+}
+
+// ***** Heading styles ***** //
+.heading__container{
+  margin: 3% auto;
+  text-align: center;
+  max-width: 500px;
+}
+.heading__title{
+  font-family: $lato;
+  font-weight: 300;
+  font-size: 3.5em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.title__green{
+  color: $font-green;
+  padding: 0;
+  margin-right: -4px;
+}
+.title__navy{
+  color: $font-navy;
+  margin-left: -4px;
+}
+
+// ***** Hero post ***** //
+
+.inner-page__container{
+  background-color: lightblue;
+  margin: 0px auto;
+  width: $page-width;
+
+}
+@media(max-width: 959px){
+    .inner-page__container{
+      width: $parent-width;
+    }
+  }
+
+.hero__container{
+  width: $parent-width;
+  background-color: orange;
+  background-image: url('http://onehdwallpaper.com/wp-content/uploads/2015/07/Free-Download-Mountain-Hd-Wallpapers.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 555px;
+  margin-bottom: 3%;
+}
+
+.hero__content{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: rgba(0,0,0,.4);
+
+}
+.post__title{
+  margin: 2% 0;
+  text-align: center;
+  font-family: $roboto-slab;
+  font-weight: 500;
+  letter-spacing: $spacing-sml;
+  font-size: 2.2em;
+}
+.title__meta{
+  margin: 0;
+  text-align: center;
+  letter-spacing: $spacing-sml;
+}
+.negative-margin{
+  margin-top: -8%;
+}
+.grey{
+  color: $font-grey;
+}
+.grey__dark{
+  color: $font-dark-grey;
+}
+.post__meta {
+  font-size: .7em;
+  font-family: $lato;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.post__image{
+  width: $parent-width;
+  margin: 2% 0;
+  height: auto;
+}
+
+.post__container{
+  width: 72%;
+  float: left;
+  border-bottom: 1px solid $border-grey;
+  margin-bottom: 3%;
+  &:first-of-type{
+      margin-bottom: 0%;
+  }
+}
+
+.ghost-btn, .ghost-btn-half{
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: $spacing-sml;
+  font-size: .8em;
+  font-family: $lato;
+  font-weight: 400;
+  transition: $ease-out-300;
+  &:hover{
+    background-color: $bg-white;
+    color: $font-navy;
+  }
+}
+.ghost-btn{
+    border: 2px solid $bg-white;
+    color: $bg-white;
+    padding: .51em 1.2em;
+}
+.ghost-btn-half{
+    border-top: 1px solid $font-grey;
+    border-bottom: 1px solid $font-grey;
+    color: $font-grey;
+    padding: .51em 0;
+    display: block;
+    text-align: center;
+    width: 150px;
+    margin: auto;
+    &:hover{
+        border-with: 50%;
+    }
+}
+.margin__break{
+    margin-bottom: 5%;
+}
+.margin__top{
+    margin-top: 18%;
+}
+
+// ***** Side content styles ***** //
+
+.side-content__container{
+  width: 25%;
+  float: right;
+  background-colour: lightblue;
+}
+.side__meta{
+  font-family: $roboto-slab;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: .8em;
+  color: $font-dark-grey;
+  letter-spacing: $spacing-sml;
+  text-align: center;
+  position: relative;
+  &:before{
+    content: '';
+    width: 25%;
+    height: 1px;
+    background-color: $border-grey;
+    position: absolute;
+    vertical-align: 50%;
+    top: 50%;
+    left: 0;
+  }
+   &:after{
+    content: '';
+    width: 25%;
+    height: 1px;
+    background-color: $border-grey;
+    position: absolute;
+    vertical-align: 50%;
+    top: 50%;
+    right: 0;
+  }
+}
+.side__profile-pic{
+  width: $parent-width;
+  height: auto;
+  margin: 10% 0;
+}
+.side__full-img{
+    width: $parent-width;
+    height: auto;
+    margin: 0 0 10% 0;
+}
+.side__text, .post__text{
+  font-family: $roboto-slab;
+  font-size: 1em;
+  color: $font-grey;
+  line-height: 1.5em;
+}
+.side__text{
+    margin: 0;
+}
+.margin__rise{
+    margin-top: 0;
+}
+.social-icon__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin: 5% auto 0px auto;
+}
+
+.instagram__container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: $parent-width;
+}
+.instagram__link{
+    width: 32%;
+    height: auto;
+
+}
+.instagram__img{
+    width: $parent-width;
+    height: auto;
+}
+
+.latest-posts__container{
+    width: $parent-width;
+    display: flex;
+    align-items: center;
+    padding-right: .5em;
+    margin-bottom: 1em;
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+
+}
+.latest-posts__link{
+    text-decoration: none;
+    color: $font-dark-grey;
+
+}
+.link__underline{
+    transition: $ease-out-300;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.latest-posts__text{
+    margin-left: 5%;
+}
+.latest-posts__img{
+    width: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    height: 80px;
+}
+.post_1{
+    background: url("http://wallup.net/wp-content/uploads/2016/01/314802-photography-urban-city-building-street-car-Volkswagen_Beetle-road-depth_of_field-736x459.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.post_2{
+    background: url("https://besidestheweather.files.wordpress.com/2015/01/img_2806.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.post_3{
+    background: url("https://static.pexels.com/photos/54200/pexels-photo-54200.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+
+.latest-posts__title{
+    font-family: $roboto-slab;
+    font-size: 1em;
+    color: $font-dark-grey;
+    font-weight: 400;
+    margin: 0 0 3% 0;
+}
+.latest-posts__intro{
+    font-family: $roboto-slab;
+    font-size: .8em;
+    color: $font-grey;
+    font-weight: 400;
+    margin: 3% 0 5% 0;
+}
+.categories__list{
+    margin: 0;
+    padding: 0;
+}
+.categories__listItem{
+    list-style-type: none;
+    border-top: 1px solid $border-grey;
+    padding: .5em 0;
+    &:first-of-type{
+        border: none;
+    }
+}
+.categories__link{
+    text-decoration: none;
+    color: $font-dark-grey;
+    font-family: $roboto-slab;
+    font-weight: 600;
+}
+.categories__numbers{
+    color: $font-grey;
+    font-family: $roboto-slab;
+    font-weight: 300;
+}
